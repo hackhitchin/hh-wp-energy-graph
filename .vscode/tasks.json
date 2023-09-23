@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Deploy hh-wp-energy-graph",
+            "type": "shell",
+            "command": "rsync",
+            "options": {
+                "cwd": "${workspaceFolder}/"
+            },
+            "args": [
+                "--verbose",
+                "--partial",
+                "--progress",
+                "--recursive",
+                "--delete",
+                // "--dry-run",
+                "--exclude", ".git/",
+                "--exclude", ".gitignore",
+                "--exclude", ".vscode/",
+                // "--exclude", "vendor",
+                "-p", "--chmod=Dug=rwx,Fug=rw,Do=rx,Fo=r",
+                ".",
+                "${config:deploy.target}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
