@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Energy Consumption Graph
  * Description: Display data from the Octopus Energy API.
- * Version: 0.1
+ * Version: 0.2
  * Author: Mark Thompson
  * Update URI: https://github.com/hackhitchin/hh-wp-energy-graph
  */
