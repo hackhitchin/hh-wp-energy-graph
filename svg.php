@@ -369,7 +369,7 @@ class Path extends Node {
         }
 
         ?>
-            <path <?= formatAttributes($this->style->getAttrs() + ['d' => implode(' ', iterator_to_array($commands))]) ?> />
+            <path <?= formatAttributes($this->style->getAttrs() + ['d' => implode(' ', $commands)]) ?> />
         <?php
     }
 }

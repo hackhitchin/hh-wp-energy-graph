@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Energy Consumption Graph
  * Description: Display data from the Octopus Energy API.
- * Version: 0.2
+ * Version: 0.2.1
  * Author: Mark Thompson
  * Update URI: https://github.com/hackhitchin/hh-wp-energy-graph
  */
@@ -630,8 +630,7 @@ add_shortcode('hh_energy_graph', function($attrs) {
         $powerAxis = $powerAxis->applyDisplay(AxisParameters::fromRange($graph->height() - 70, 30));
 
         $interval = selectDivisionInterval($max, 4);
-        error_log(print_r($powerAxis, true));
-
+        
         $p = 0;
         while (true) {
             $y = $powerAxis->map($p);
